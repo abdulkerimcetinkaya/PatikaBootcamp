@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class BMICalculator {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-
+        // sdad
         double weight, height, BMI;
 
         System.out.print("Enter your weight (KG) : ");
