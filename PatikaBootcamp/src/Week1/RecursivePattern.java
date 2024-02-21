@@ -1,8 +1,15 @@
 package Week1;
 
+import java.util.Scanner;
+
 public class RecursivePattern {
     public static void main(String[] args) {
-        patternMethod(36);
+        Scanner input  = new Scanner(System.in);
+
+        System.out.print("Enter Number : ");
+        int num = input.nextInt();
+
+        patternMethod(num);
     }
 
 
