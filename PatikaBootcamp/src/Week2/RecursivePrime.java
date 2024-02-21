@@ -1,8 +1,15 @@
 package Week2;
 
+import java.util.Scanner;
+
 public class RecursivePrime {
     public static void main(String[] args) {
-        System.out.println("Is Prime: "+ isPrime(8, 2));
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter Number : ");
+        int num = input.nextInt();
+
+        System.out.println("Is Prime: "+ isPrime(num, 2));
     }
 
     public static boolean isPrime(int number, int i) {
