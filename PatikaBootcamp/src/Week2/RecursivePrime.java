@@ -1,4 +1,4 @@
-package Week1;
+package Week2;
 
 public class RecursivePrime {
     public static void main(String[] args) {
