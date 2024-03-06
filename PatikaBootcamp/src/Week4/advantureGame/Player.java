@@ -22,16 +22,17 @@ public class Player {
         // Bu karakterlerin özelliklerini ekrana yazdıran yeni nesil bir for döngüsü tanımladık
         for (GameChar gameChar : charList){
             System.out.println("ID : " + gameChar.getId()+
-                    "\nKarakter : " + gameChar.getName() +
-                    "\nHasar : " + gameChar.getDamage()+
-                    "\nSağlık : " + gameChar.getHealth() +
-                    "\nPara : " + gameChar.getMoney());
+                    "\tKarakter : " + gameChar.getName() +
+                    "\tHasar : " + gameChar.getDamage()+
+                    "\tSağlık : " + gameChar.getHealth() +
+                    "\tPara : " + gameChar.getMoney());
             System.out.println("----------------------------------");
         }
         // karakterlerin ID numaralarını ve isimlerini kullanıcıya göstermek üzere ekrana yazdırdık ve
         // kullanıcıdan bir seçim yapmasını istedik
-        System.out.print("Samuray (1)\nOkçu (2)\nŞovalye(3)\nLütfen bir karakter seçimi için ID numarası giriniz : ");
+        System.out.print("Bir karakter ID seçiniz : ");
         int selectChar = scan.nextInt();
+        System.out.println("----------------------------------");
         // burada kullanıcının seçimine göre initPlayer metodunu çağırdık ve içerisine seçtiğimiz karakteri kpyduk.
         switch (selectChar){
             case 1:
@@ -47,10 +48,10 @@ public class Player {
                 initPlayer(new Samurai());
         }
         // burada seçilen karakterin bilgilerini ekrana yazdırdık.
-        System.out.println("Seçtiğin karakter : " + this.getCharName() +
-                " - Hasar Gücü : " + this.getDamage()+
-                " - Sağlığı : " + this.getHealth()+
-                " - Parası : " + this.getMoney());
+        System.out.println("Seçtiğiniz Karakter : " + this.getCharName().toUpperCase() +
+                " | HASAR GÜCÜ : " + this.getDamage()+
+                " | SAĞLIK : " + this.getHealth()+
+                " | PARA : " + this.getMoney());
     }
 
     // initPlayer metodu oyuncunun özelliklerini parametre olarak verdiğimiz karakterin özellikleri ile değiştiriyor.
