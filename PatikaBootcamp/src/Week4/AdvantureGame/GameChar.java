@@ -1,4 +1,4 @@
-package Week4.AdventreGame;
+package Week4.AdvantureGame;
 
 public abstract class GameChar {
     private int id;
