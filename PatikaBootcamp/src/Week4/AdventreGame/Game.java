@@ -1,4 +1,4 @@
-package Week4.advantureGame;
+package Week4.AdventreGame;
 
 import java.util.Scanner;
 

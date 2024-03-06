@@ -1,6 +1,4 @@
-package Week4.advantureGame;
-
-import java.util.Scanner;
+package Week4.AdventreGame;
 
 public class Main {
     public static void main(String[] args) {
