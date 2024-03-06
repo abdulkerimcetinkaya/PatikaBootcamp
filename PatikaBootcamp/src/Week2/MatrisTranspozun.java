@@ -36,7 +36,8 @@ public class MatrisTranspozun {
                 System.out.print(transpozMatris[i][j] + "\t");
             }
             System.out.println();
-        }
 
+
+        }
     }
 }
