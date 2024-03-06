@@ -1,4 +1,4 @@
-package Week4.AdvantureGame;
+package Week4.advantureGame;
 
 public class Samurai extends GameChar {
     public Samurai() {

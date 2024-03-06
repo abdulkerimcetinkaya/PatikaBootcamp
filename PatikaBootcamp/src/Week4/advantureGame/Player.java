@@ -1,21 +1,27 @@
-package Week4.AdvantureGame;
+package Week4.advantureGame;
 
 import java.util.Scanner;
 
 public class Player {
+    private String name;
     private int damage;
     private  int health;
     private int money;
     private String charName;
-    private String name;
     Scanner scan = new Scanner(System.in);
 
+    // Kurucu Metot
     public Player(String name){
         this.name = name;
     }
 
+
+
+    // Karakter seçimi metodu
     public void selectChar(){
+        // Burada charList adında bir dizi oluşturup içerisine karakter nesnelerimizi verdik.
         GameChar[] charList = {new Samurai(), new Archer(), new Knight()};
+        // Bu karakterlerin özelliklerini ekrana yazdıran yeni nesil bir for döngüsü tanımladık
         for (GameChar gamechar : charList){
             System.out.println("ID : " + gamechar.getId()+
                     "\nKarakter : " + gamechar.getName() +
@@ -24,7 +30,8 @@ public class Player {
                     "\nPara : " + gamechar.getMoney());
             System.out.println("----------------------------------");
         }
-        System.out.print("Samuray (1)\nOkçu (2)\nŞovalye(3)\nLütfen bir karakter seçiniz : ");
+        // karakterlerin
+        System.out.print("Samuray (1)\nOkçu (2)\nŞovalye(3)\nLütfen bir karakter seçimi için ID numarası giriniz : ");
         int selectChar = scan.nextInt();
         switch (selectChar){
             case 1:
@@ -53,6 +60,22 @@ public class Player {
         this.setCharName(gameChar.getName());
     }
 
+
+
+
+
+
+
+
+    // Getter ve Setter metotlar
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getDamage() {
         return damage;
@@ -85,13 +108,4 @@ public class Player {
     public void setCharName(String charName) {
         this.charName = charName;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
 }

@@ -1,7 +1,7 @@
-package Week4.AdvantureGame;
+package Week4.advantureGame;
 
 import java.util.Scanner;
-
+// Bu sınıf oyunun akışını sağlıyor.
 public class Game {
     Scanner scan = new Scanner(System.in);
     public void start(){

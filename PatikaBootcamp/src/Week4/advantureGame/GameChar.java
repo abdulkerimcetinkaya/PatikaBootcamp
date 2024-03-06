@@ -1,4 +1,4 @@
-package Week4.AdvantureGame;
+package Week4.advantureGame;
 
 public abstract class GameChar {
     private int id;
@@ -7,6 +7,8 @@ public abstract class GameChar {
     private int health;
     private int money;
 
+
+    // Kurucu metot
     public GameChar(int id,String name,int damage, int health, int money) {
         this.id = id;
         this.name = name;
@@ -15,43 +17,31 @@ public abstract class GameChar {
         this.money = money;
     }
 
+    // Getter ve Setter Metotlar
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
     public int getDamage() {
         return damage;
     }
-
     public void setDamage(int damage) {
         this.damage = damage;
     }
-
     public int getHealth() {
         return health;
     }
-
     public void setHealth(int health) {
         this.health = health;
     }
-
     public int getMoney() {
         return money;
     }
-
     public void setMoney(int money) {
         this.money = money;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

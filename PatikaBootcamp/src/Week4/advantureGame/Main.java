@@ -1,4 +1,4 @@
-package Week4.AdvantureGame;
+package Week4.advantureGame;
 
 public class Main {
     public static void main(String[] args) {
