@@ -1,0 +1,12 @@
+package Week4.advantureGame;
+
+public class SafeHouse extends NormalLoc {
+    public SafeHouse(Player player) {
+        super(player, "Güvenli ev");
+    }
+
+    public boolean onLocation() {
+        System.out.println("Güvenli eve giriş yaptınız canınız yenileniyor...");
+        return true;
+    }
+}
