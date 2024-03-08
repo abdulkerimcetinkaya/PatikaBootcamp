@@ -1,9 +1,12 @@
 package Week4.advantureGame;
 
+import java.util.Scanner;
+
 public abstract class Location {
     private int id;
     private Player player;
     private String name;
+    protected static  Scanner scan = new Scanner(System.in);
 
     public Location(Player player, String name){
         this.player = player;

@@ -15,7 +15,12 @@ public class Game {
 
         Location location = null;
         while (true){
-            System.out.print("------------------BÖLGELER------------------\n1 - Güvenli Ev\n2 - Mağaza\nLütfen gitmek istediğiniz bölgeyi seçiniz : ");
+            player.printInfo();
+            System.out.println();
+            System.out.print("------------------BÖLGELER------------------\n" +
+                    "1 - Güvenli Ev\n" +
+                    "2 - Mağaza\n" +
+                    "Lütfen gitmek istediğiniz bölgeyi seçiniz : ");
             int selectLoc = scan.nextInt();
             switch (selectLoc){
                 case 1:

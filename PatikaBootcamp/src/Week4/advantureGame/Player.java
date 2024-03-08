@@ -8,11 +8,13 @@ public class Player {
     private  int health;
     private int money;
     private String charName;
+    private Inventory inventory;
     Scanner scan = new Scanner(System.in);
 
     // Kurucu Metot
     public Player(String name){
         this.name = name;
+        this.inventory = new Inventory();
     }
 
     // Karakter seçimi metodu
@@ -48,10 +50,10 @@ public class Player {
                 initPlayer(new Samurai());
         }
         // burada seçilen karakterin bilgilerini ekrana yazdırdık.
-        System.out.println("Seçtiğiniz Karakter : " + this.getCharName().toUpperCase() +
-                " | HASAR GÜCÜ : " + this.getDamage()+
-                " | SAĞLIK : " + this.getHealth()+
-                " | PARA : " + this.getMoney());
+//        System.out.println("Seçtiğiniz Karakter : " + this.getCharName().toUpperCase() +
+//                " | HASAR GÜCÜ : " + this.getDamage()+
+//                " | SAĞLIK : " + this.getHealth()+
+//                " | PARA : " + this.getMoney());
     }
 
     // initPlayer metodu oyuncunun özelliklerini parametre olarak verdiğimiz karakterin özellikleri ile değiştiriyor.
@@ -62,10 +64,20 @@ public class Player {
         this.setCharName(gameChar.getName());
     }
 
+    public void printInfo(){
+        System.out.println(
+                "Silahınız : " + this.getInventory().getWeapon().getName()+
+                " - Hasarınız : " + this.getDamage() +
+                " - Sağlığınız : " + this.getHealth() +
+                " - Paranız : " + this.getMoney());
+    }
+
     // Getter ve Setter metotları yazdık
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
-    public int getDamage() { return damage; }
+    public int getDamage() {
+        return damage + this.getInventory().getWeapon().getDamage();
+    }
     public void setDamage(int damage) { this.damage = damage; }
     public int getHealth() { return health; }
     public void setHealth(int health) { this.health = health; }
@@ -73,4 +85,12 @@ public class Player {
     public void setMoney(int money) { this.money = money; }
     public String getCharName() { return charName; }
     public void setCharName(String charName) { this.charName = charName; }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
 }
