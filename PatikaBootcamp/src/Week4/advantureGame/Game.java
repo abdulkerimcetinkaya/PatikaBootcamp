@@ -18,8 +18,11 @@ public class Game {
             player.printInfo();
             System.out.println();
             System.out.print("------------------BÖLGELER------------------\n" +
-                    "1 - Güvenli Ev\n" +
-                    "2 - Mağaza\n" +
+                    "1 - Güvenli Ev -> Burası sakin...\n" +
+                    "2 - Dükkan -> Yeni zırh ve silahlar geldi.\n" +
+                    "3 - Mağara -> Ödül <YEMEK> dikkatli ol karşına zombi çıkabilir..\n"+
+                    "4 - Orman -> Ödül <ODUN> dikkatli ol karşına vampir çıkabilir..\n"+
+                    "5 - Nehir -> Ödül <SU> dikkatli ol karşına ayı çıkabilir..\n"+
                     "0 - Çıkış Yap\n"+
                     "Lütfen gitmek istediğiniz bölgeyi seçiniz : ");
             int selectLoc = scan.nextInt();
@@ -33,8 +36,17 @@ public class Game {
                 case 2:
                     location = new ToolStore(player);
                     break;
+                case 3:
+                    location = new Cave(player);
+                    break;
+                case 4:
+                    location = new Forest(player);
+                    break;
+                case 5:
+                    location = new River(player);
+                    break;
                 default:
-                    location = new SafeHouse(player);
+                    System.out.println("Lütfen geçerli bir ifade giriniz !");
             }
 
 
