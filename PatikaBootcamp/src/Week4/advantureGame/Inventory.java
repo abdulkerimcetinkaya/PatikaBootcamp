@@ -3,6 +3,7 @@ package Week4.advantureGame;
 public class Inventory {
     Weapon weapon;
     Armour armour;
+    private String award;
 
     public Inventory(){
         this.weapon = new Weapon("Yumruk",-1,0,0);
@@ -23,5 +24,13 @@ public class Inventory {
 
     public void setArmour(Armour armour) {
         this.armour = armour;
+    }
+
+    public String getAward() {
+        return award;
+    }
+
+    public void setAward(String award) {
+        this.award = award;
     }
 }

@@ -7,6 +7,7 @@ public class SafeHouse extends NormalLoc {
 
     public boolean onLocation() {
         System.out.println("Güvenli eve giriş yaptınız canınız yenileniyor...");
+        this.getPlayer().setHealth(this.getPlayer().getOrijinalHealth());
         return true;
     }
 }

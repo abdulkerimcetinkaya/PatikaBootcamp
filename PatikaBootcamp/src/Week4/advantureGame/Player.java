@@ -6,6 +6,7 @@ public class Player {
     private String name;
     private int damage;
     private  int health;
+    private int orijinalHealth;
     private int money;
     private String charName;
     private Inventory inventory;
@@ -64,6 +65,7 @@ public class Player {
     public void initPlayer(GameChar gameChar){
         this.setDamage(gameChar.getDamage());
         this.setHealth(gameChar.getHealth());
+        this.setOrijinalHealth(gameChar.getHealth());
         this.setMoney(gameChar.getMoney());
         this.setCharName(gameChar.getName());
     }
@@ -72,12 +74,18 @@ public class Player {
         System.out.println("Silahın : " + this.getInventory().getWeapon().getName()+
                 " - Zırhın : " + this.getInventory().getArmour().getName()+
                 " - Bloklama : " + this.getInventory().getArmour().getBlock()+
-                " - Hasarın : " + this.getDamage() +
+                " - Hasarın : " + this.getTotalDamage() +
                 " - Sağlığın : " + this.getHealth() +
                 " - Paran : " + this.getMoney());
     }
 
-    // Getter ve Setter metotları yazdık
+    public int getTotalDamage(){
+        return damage + this.getInventory().getWeapon().getDamage();
+    }
+
+
+
+    // ---------------------------------- Getter ve Setter ----------------------------------
     public String getName() {
         return name;
     }
@@ -85,7 +93,7 @@ public class Player {
         this.name = name;
     }
     public int getDamage() {
-        return damage + this.getInventory().getWeapon().getDamage();
+        return damage;
     }
     public void setDamage(int damage) {
         this.damage = damage;
@@ -96,6 +104,15 @@ public class Player {
     public void setHealth(int health) {
         this.health = health;
     }
+
+    public int getOrijinalHealth() {
+        return orijinalHealth;
+    }
+
+    public void setOrijinalHealth(int orijinalHealth) {
+        this.orijinalHealth = orijinalHealth;
+    }
+
     public int getMoney() {
         return money;
     }
@@ -114,4 +131,5 @@ public class Player {
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
+
 }
