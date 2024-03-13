@@ -17,8 +17,7 @@ public class Player {
         this.inventory = new Inventory();
     }
 
-    // Karakter seçimi metodu
-    public void selectChar(){
+    public void charInfo(){
         // Burada charList adında bir dizi oluşturup içerisine karakter nesnelerimizi verdik.
         GameChar[] charList = {new Samurai(), new Archer(), new Knight()};
         // Bu karakterlerin özelliklerini ekrana yazdıran yeni nesil bir for döngüsü tanımladık
@@ -30,12 +29,17 @@ public class Player {
                     "\tPara : " + gameChar.getMoney());
             System.out.println("----------------------------------");
         }
+    }
+
+    // Karakter seçimi metodu
+    public void selectChar(){
+        charInfo();
         // karakterlerin ID numaralarını ve isimlerini kullanıcıya göstermek üzere ekrana yazdırdık ve
         // kullanıcıdan bir seçim yapmasını istedik
         System.out.print("Bir karakter ID seçiniz : ");
         int selectChar = scan.nextInt();
         System.out.println("----------------------------------");
-        // burada kullanıcının seçimine göre initPlayer metodunu çağırdık ve içerisine seçtiğimiz karakteri kpyduk.
+        // burada kullanıcının seçimine göre initPlayer metodunu çağırdık ve içerisine seçtiğimiz karakteri koyduk.
         switch (selectChar){
             case 1:
                 initPlayer(new Samurai());
@@ -65,31 +69,48 @@ public class Player {
     }
 
     public void printInfo(){
-        System.out.println(
-                "Silahınız : " + this.getInventory().getWeapon().getName()+
-                " - Hasarınız : " + this.getDamage() +
-                " - Sağlığınız : " + this.getHealth() +
-                " - Paranız : " + this.getMoney());
+        System.out.println("Silahın : " + this.getInventory().getWeapon().getName()+
+                " - Zırhın : " + this.getInventory().getArmour().getName()+
+                " - Bloklama : " + this.getInventory().getArmour().getBlock()+
+                " - Hasarın : " + this.getDamage() +
+                " - Sağlığın : " + this.getHealth() +
+                " - Paran : " + this.getMoney());
     }
 
     // Getter ve Setter metotları yazdık
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
     public int getDamage() {
         return damage + this.getInventory().getWeapon().getDamage();
     }
-    public void setDamage(int damage) { this.damage = damage; }
-    public int getHealth() { return health; }
-    public void setHealth(int health) { this.health = health; }
-    public int getMoney() { return money; }
-    public void setMoney(int money) { this.money = money; }
-    public String getCharName() { return charName; }
-    public void setCharName(String charName) { this.charName = charName; }
-
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+    public int getHealth() {
+        return health;
+    }
+    public void setHealth(int health) {
+        this.health = health;
+    }
+    public int getMoney() {
+        return money;
+    }
+    public void setMoney(int money) {
+        this.money = money;
+    }
+    public String getCharName() {
+        return charName;
+    }
+    public void setCharName(String charName) {
+        this.charName = charName;
+    }
     public Inventory getInventory() {
         return inventory;
     }
-
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }

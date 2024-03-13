@@ -18,8 +18,12 @@ public abstract class GameChar {
     }
 
     // Getter ve Setter Metotlar
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
     public int getDamage() {
         return damage;
     }

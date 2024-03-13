@@ -20,9 +20,13 @@ public class Game {
             System.out.print("------------------BÖLGELER------------------\n" +
                     "1 - Güvenli Ev\n" +
                     "2 - Mağaza\n" +
+                    "0 - Çıkış Yap\n"+
                     "Lütfen gitmek istediğiniz bölgeyi seçiniz : ");
             int selectLoc = scan.nextInt();
             switch (selectLoc){
+                case 0:
+                    location = null;
+                    break;
                 case 1:
                     location = new SafeHouse(player);
                     break;
@@ -33,6 +37,11 @@ public class Game {
                     location = new SafeHouse(player);
             }
 
+
+            if (location == null) {
+                System.out.println("Oyun Bitti");
+                break;
+            }
             if(!location.onLocation()){
                 System.out.println("GAME OVER");
                 break;
@@ -40,5 +49,4 @@ public class Game {
         }
 
     }
-
 }
