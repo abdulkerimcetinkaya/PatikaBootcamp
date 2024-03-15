@@ -13,17 +13,9 @@ public abstract class Location {
         this.name = name;
     }
 
-
     public abstract boolean onLocation();
 
-
-
-
-
-
-
-
-    // Getter ve Setter metodlar
+    //------------------------------------ Getter ve Setter metodlar ----------------------------------//
     public Player getPlayer() {return player;}
     public void setPlayer(Player player) {this.player = player;}
     public String getName() {return name;}

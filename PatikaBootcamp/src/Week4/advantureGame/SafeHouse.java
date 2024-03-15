@@ -10,4 +10,14 @@ public class SafeHouse extends NormalLoc {
         this.getPlayer().setHealth(this.getPlayer().getOrijinalHealth());
         return true;
     }
+
+    public boolean finish(){
+        if (this.getPlayer().getInventory().isFood() && this.getPlayer().getInventory().isWater() && this.getPlayer().getInventory().isFirewood()){
+            System.out.println("Tebrikler oyunu bitirdiniz.");
+            return true;
+        }
+        return false;
+    }
+
+
 }

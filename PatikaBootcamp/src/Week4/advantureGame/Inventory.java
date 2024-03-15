@@ -3,11 +3,15 @@ package Week4.advantureGame;
 public class Inventory {
     Weapon weapon;
     Armour armour;
-    private String award;
+    private boolean water,food,firewood;
+
 
     public Inventory(){
         this.weapon = new Weapon("Yumruk",-1,0,0);
         this.armour = new Armour("Paçavra", -1,0,0);
+        this.water = false;
+        this.food = false;
+        this.firewood = false;
     }
 
 
@@ -26,11 +30,27 @@ public class Inventory {
         this.armour = armour;
     }
 
-    public String getAward() {
-        return award;
+    public boolean isWater() {
+        return water;
     }
 
-    public void setAward(String award) {
-        this.award = award;
+    public void setWater(boolean water) {
+        this.water = water;
+    }
+
+    public boolean isFood() {
+        return food;
+    }
+
+    public void setFood(boolean food) {
+        this.food = food;
+    }
+
+    public boolean isFirewood() {
+        return firewood;
+    }
+
+    public void setFirewood(boolean firewood) {
+        this.firewood = firewood;
     }
 }

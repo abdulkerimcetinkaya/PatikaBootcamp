@@ -23,6 +23,7 @@ public class Game {
                     "3 - Mağara -> Ödül <YEMEK> dikkatli ol karşına zombi çıkabilir..\n"+
                     "4 - Orman -> Ödül <ODUN> dikkatli ol karşına vampir çıkabilir..\n"+
                     "5 - Nehir -> Ödül <SU> dikkatli ol karşına ayı çıkabilir..\n"+
+                    "6 - Maden -> Ödül <Herhangi bir Eşya yada Para> dikkatli ol karşına yılan çıkabilir..\n"+
                     "0 - Çıkış Yap\n"+
                     "Lütfen gitmek istediğiniz bölgeyi seçiniz : ");
             int selectLoc = scan.nextInt();
@@ -45,10 +46,31 @@ public class Game {
                 case 5:
                     location = new River(player);
                     break;
+                case 6:
+                    location = new Mine(player);
+                    break;
                 default:
                     System.out.println("Lütfen geçerli bir ifade giriniz !");
             }
 
+            if (selectLoc == 3 && new Cave(player).getPlayer().getInventory().isFood()){
+                System.out.println("Burasaı tamamlandı.");
+                continue;
+            }
+
+            if (selectLoc == 4 && new Cave(player).getPlayer().getInventory().isFirewood()){
+                System.out.println("Burasaı tamamlandı.");
+                continue;
+            }
+
+            if (selectLoc == 5 && new Cave(player).getPlayer().getInventory().isWater()){
+                System.out.println("Burasaı tamamlandı.");
+                continue;
+            }
+
+            if (new SafeHouse(player).finish()){
+                break;
+            }
 
             if (location == null) {
                 System.out.println("Oyun Bitti");

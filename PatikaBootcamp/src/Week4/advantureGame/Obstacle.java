@@ -7,16 +7,15 @@ public class Obstacle {
     private int health;
     private int money;
     private int orijinalHealth;
-    private String award;
 
-    public Obstacle(String name, int id, int damage, int health,int money,String award) {
+
+    public Obstacle(String name, int id, int damage, int health,int money) {
         this.name = name;
         this.id = id;
         this.damage = damage;
         this.health = health;
         this.orijinalHealth = health;
         this.money = money;
-        this.award = award;
     }
 
     public String getName() {
@@ -66,15 +65,10 @@ public class Obstacle {
         return money;
     }
 
-    public void setMoney(int money) {
+    public int setMoney(int money) {
         this.money = money;
+        return money;
     }
 
-    public String getAward() {
-        return award;
-    }
 
-    public void setAward(String award) {
-        this.award = award;
-    }
 }
