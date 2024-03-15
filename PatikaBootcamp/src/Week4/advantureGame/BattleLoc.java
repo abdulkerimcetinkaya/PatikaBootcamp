@@ -13,7 +13,7 @@ public abstract class BattleLoc extends  Location{
         this.award = award;
         this.maxObstacle = maxObstacle;
     }
-
+    // Konum
     @Override
     public boolean onLocation() {
         int obsNumber = randomObstacleNumber();
@@ -96,8 +96,11 @@ public abstract class BattleLoc extends  Location{
                     break;
                 }
             }
+            else {
+                System.out.println("Birşey kazanamadınız.");
+            }
         }
-        System.out.println("Birşey kazanamadınız.");
+
 
         if (this.award.equalsIgnoreCase("food") && this.getPlayer().getInventory().isFood() == false){
             System.out.println(this.award + " kazandınız!");
