@@ -101,7 +101,6 @@ public abstract class BattleLoc extends  Location{
             }
         }
 
-
         if (this.award.equalsIgnoreCase("food") && this.getPlayer().getInventory().isFood() == false){
             System.out.println(this.award + " kazandınız!");
             getPlayer().getInventory().setFood(true);
