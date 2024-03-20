@@ -6,12 +6,12 @@ public class Fiksture {
 
     public static void main (String[] args){
         List<String> teams = new ArrayList<>();
-        teams.add("Galatasaray");
-        teams.add("Bursaspor");
-        teams.add("Fenerbahçe");
-        teams.add("Beşiktaş");
-        teams.add("Başakşehir");
-        teams.add("Trabzonspor");
+        teams.add("Galatasaray");// trabszon list[0] 1,2,3,4,5
+        teams.add("Bursaspor"); // başakşehir
+        teams.add("Fenerbahçe"); // beşiktaş
+        teams.add("Beşiktaş"); // fenerbahçe
+        teams.add("Başakşehir"); // bursa
+        teams.add("Trabzonspor"); // galatesatar
 
         generateFixture(teams);
     }
@@ -20,32 +20,17 @@ public class Fiksture {
         if (teams.size() % 2 != 0){
             teams.add("Bay");
         }
+        int matchPerWeek = teams.size() / 2;
+        int totalWeek = teams.size() - 1;
+        List<String> matchList = new ArrayList<>();
 
-        int totalWeeks = teams.s;
-        int matchesPerWeek = teams.size() / 2;
-
-        for (int week = 1; week <= totalWeeks; week++) {
-            System.out.println(week + ". Hafta");
-            Collections.rotate(teams, 1); // Takımları döndürerek iç saha/dış saha değişimini sağlar
-
-            for (int i = 0; i < matchesPerWeek; i++) {
-                String homeTeam = teams.get(i);
-                String awayTeam = teams.get(teams.size() - 1 - i);
-                System.out.println(homeTeam + " vs " + awayTeam);
-            }
-        }
-
-        // İkinci devre için takımların sırasını tersine çevirerek fikstürü oluştur
-        Collections.reverse(teams);
-
-        for (int week = 1; week <= totalWeeks; week++) {
-            System.out.println((week + totalWeeks) + ". Hafta (İkinci Devre)");
-            Collections.rotate(teams, 1); // Takımları döndürerek iç saha/dış saha değişimini sağlar
-
-            for (int i = 0; i < matchesPerWeek; i++) {
-                String homeTeam = teams.get(i);
-                String awayTeam = teams.get(teams.size() - 1 - i);
-                System.out.println(homeTeam + " vs " + awayTeam);
+        for (int i = 1; i < totalWeek + 1; i++) {
+            System.out.println(i+". Hafta");
+            Collections.shuffle(teams);
+            for (int j = 0; j < matchPerWeek; j++) {
+                int firstIndex=j;
+                int secondIndex=(teams.size()-1)-j;
+                System.out.println(teams.get(firstIndex)+ " vs " + teams.get(secondIndex));
             }
         }
     }
