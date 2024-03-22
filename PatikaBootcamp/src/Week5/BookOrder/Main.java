@@ -28,7 +28,7 @@ public class Main {
         }
     }
 
-    public static void toPageNumber(){
+    public static void toName(){
         // Kitap isimlerine göre sıralama (Alfabeye göre)
         TreeSet<Book> orderBookName = new TreeSet<>(new OrderNameComparable());
         orderBookName.add(new Book("Olağanüstü Bir Gece",80,"Stefan Zweig",2017));
@@ -42,7 +42,7 @@ public class Main {
         }
     }
 
-    public static void toName(){
+    public static void toPageNumber(){
         // Kitapları sayfa sayısına göre sıralama (Küçükten, büyüğe)
         TreeSet<Book> orderPageNumber = new TreeSet<>(new OrderPageNumberComparable());
         orderPageNumber.add(new Book("Olağanüstü Bir Gece",90,"Stefan Zweig",2017));
