@@ -37,7 +37,9 @@ public class MostMentionedWord {
                 }
             }
         }
-        System.out.println("En çok geçen kelime: " + mostFrequentWord);
+
+        System.out.println(word);
+        System.out.println("En çok geçen kelime: " + (mostFrequentWord));
     }
 }
 
