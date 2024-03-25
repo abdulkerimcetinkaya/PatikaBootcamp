@@ -1,0 +1,48 @@
+1) test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.
+
+CREATE TABLE employee(
+	id INTEGER,
+	name VARCHAR(50),
+	birthday DATE,
+	email VARCHAR(100)
+);
+
+2) Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.
+
+insert into employee (id, name, birthday, email) values (1, 'Esta Potteridge', '2020-05-11', 'epotteridge0@phpbb.com');
+insert into employee (id, name, birthday, email) values (2, 'Auguste Bysshe', '2021-07-17', 'abysshe1@furl.net');
+insert into employee (id, name, birthday, email) values (3, 'Jessee Drysdall', '2022-08-29', 'jdrysdall2@netscape.com');
+insert into employee (id, name, birthday, email) values (4, 'Quinlan Pettiward', '2023-01-09', 'qpettiward3@dyndns.org');
+insert into employee (id, name, birthday, email) values (5, 'Maggy Willoughey', '2014-02-25', 'mwilloughey4@unicef.org');
+.
+.
+.
+insert into employee (id, name, birthday, email) values (49, 'Emmett Caughte', '2012-04-18', 'ecaughte1c@wisc.edu');
+insert into employee (id, name, birthday, email) values (50, 'Moll Geraudy', '2022-04-22', 'mgeraudy1d@jimdo.com');
+
+3) Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.
+
+UPDATE employee
+SET email = 'xxxxxx@yyyyyyy'
+WHERE id = 12;
+
+
+UPDATE employee
+SET name = 'Müslim'
+WHERE id = 6;
+
+UPDATE employee
+SET birthday = '1995-05-06'
+WHERE id = 25;
+
+4) Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
+
+DELETE FROM employee
+WHERE email = 'xxxxxx@yyyyyyy'
+
+DELETE FROM employee
+WHERE birthday = '1995-05-06';
+
+DELETE FROM employee
+WHERE name = 'Müslim';
+
