@@ -78,7 +78,7 @@ offset ve limit bilgisi olmadan attığımız sorgunun sonucu ile offset ve limi
   FETCH FIRST 1 ROW ONLY;
 ```
 
-## Ödev 8
+## Ödev 8 (Tablolarla Çalışmak)
 **1) Test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.**
 ```sql
   CREATE TABLE employee (
