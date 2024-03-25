@@ -1,13 +1,13 @@
-Sorguların yapılduğı [veritabanı](https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/)
+Sorguların yapıldığı [veritabanı](https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/)
 ## Ödev 1
 **1) Film tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.**
-```sql
+```sql[SQL_Temelleri_2.md](..%2FWeek6%2FSQL_Temelleri_2.md)
   SELECT title, description FROM film;
 ```
 **2) Film tablosunda bulunan tüm sütunlardaki verileri film uzunluğu (length) 60 dan büyük VE 75 ten küçük olma koşullarıyla sıralayınız.**
 ```sql
   SELECT title, length FROM film
-  WHERE  length > 60 AND length < 75;
+  WHERE  length > 60 AND length < 75;[SQL_Temelleri_1.md](SQL_Temelleri_1.md)
 ```
 **3) Film tablosunda bulunan tüm sütunlardaki verileri rental_rate 0.99 VE replacement_cost 12.99 VEYA 28.99 olma koşullarıyla sıralayınız.**
 ```sql
