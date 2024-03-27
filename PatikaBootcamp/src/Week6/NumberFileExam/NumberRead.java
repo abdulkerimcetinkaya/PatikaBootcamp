@@ -8,12 +8,12 @@ public class NumberRead {
         //-------------Dosya Oluşturma-------------------
 
         // Bir dizin belirterek 'Number.txt' adında bir dosya oluşturuldu referans olarak 'file' nesnesine atandı.
-        File file = new File("src/Week6/NumberReaderExam/Number.txt");
+        File file = new File("src/Week6/NumberFileExam/Number.txt");
         // Belirtilen dizinde dosyanın oluşup oluşmadığı kontrol edildi.
-        if (!file.exists()){
-            file.createNewFile();
+        if (file.createNewFile()){
+            System.out.println(file.getName() + " dosyası oluşturuldu");
         }else {
-            System.out.println("Dosya Zaten Mevcut !");
+            System.out.println(file.getName() + " dosyası zaten mevcut !");
         }
 
         //-------------Dosya Yazma-------------------
@@ -39,6 +39,7 @@ public class NumberRead {
         while ((line = bufferedReader.readLine()) != null){
             int number = Integer.parseInt(line);
             sum += number;
+
         }
         bufferedReader.close();
 
