@@ -44,9 +44,11 @@ public class Main {
     public static void readFile() throws IOException{
         File file = new File("src/Week6/Notepad/Notepad.txt");
         Scanner scanner = new Scanner(file);
+        int i  = 1;
         while (scanner.hasNextLine()){
             String line = scanner.nextLine();
-            System.out.println(line);
+            System.out.println(i +") "+ line);
+            i++;
         }
         scanner.close();
     }
