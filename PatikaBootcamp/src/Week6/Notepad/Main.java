@@ -17,7 +17,7 @@ public class Main {
         }
 
     }
-
+    // -------------- Dosya Oluşturma -----------------
     public static void createFile() throws IOException {
         File file = new File("src/Week6/Notepad/Notepad.txt");
         if (file.createNewFile()) {
@@ -27,7 +27,7 @@ public class Main {
         }
 
     }
-
+    // -------------- Dosyaya Yazma -----------------
     public static void writeFile() throws IOException {
         Scanner scanner = new Scanner(System.in);
         File file = new File("src/Week6/Notepad/Notepad.txt");
@@ -40,6 +40,7 @@ public class Main {
         bufferedWriter.close();
     }
 
+    // -------------- Dosyaya Okuma -----------------
     public static void readFile() throws IOException{
         File file = new File("src/Week6/Notepad/Notepad.txt");
         Scanner scanner = new Scanner(file);
@@ -48,10 +49,6 @@ public class Main {
             System.out.println(line);
         }
         scanner.close();
-
-
     }
-
-
 }
 
