@@ -1,0 +1,1 @@
+Mayın Tarlası projesi ayrı bir repo oluşturularak yüklenmiştir.
